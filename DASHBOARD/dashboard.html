@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Digital Library</title>
+
+    <link
+        rel="stylesheet"
+        href="./dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- =================================
+         MAIN DASHBOARD
+    ================================== -->
+
+    <div class="dashboard">
+
+
+        <!-- =================================
+             SIDEBAR
+        ================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    📚
+                </div>
+
+                <div>
+                    <h2>Digital Library</h2>
+
+                    <span>
+                        Management System
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-item active"
+                    data-section="dashboard">
+
+                    <span>🏠</span>
+
+                    Dashboard
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="books">
+
+                    <span>📚</span>
+
+                    Books
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="members">
+
+                    <span>👥</span>
+
+                    Members
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="issued">
+
+                    <span>📋</span>
+
+                    Issued Books
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="reports">
+
+                    <span>📊</span>
+
+                    Reports
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="about">
+
+                    <span>ℹ️</span>
+
+                    About
+
+                </button>
+
+
+            </nav>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <button
+                    class="nav-item logout-item"
+                    id="logoutBtn">
+
+                    <span>🚪</span>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================
+             MAIN AREA
+        ================================== -->
+
+        <div class="main-area">
+
+
+            <!-- =================================
+                 TOP HEADER
+            ================================== -->
+
+            <header class="topbar">
+
+
+                <div class="mobile-menu"
+                     id="mobileMenu">
+
+                    ☰
+
+                </div>
+
+
+                <div class="topbar-title">
+
+                    <h2 id="pageTitle">
+                        Dashboard
+                    </h2>
+
+                    <p>
+                        Digital Library Management System
+                    </p>
+
+                </div>
+
+
+                <!-- USER -->
+
+                <div class="header-user">
+
+                    <div
+                        class="avatar"
+                        id="headerAvatar">
+
+                        U
+
+                    </div>
+
+
+                    <div class="header-user-info">
+
+                        <strong id="dashboardUserName">
+                            User
+                        </strong>
+
+                        <span id="dashboardUserRole">
+                            User
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 CONTENT
+            ================================== -->
+
+            <main class="content">
+
+
+                <!-- =================================
+                     DASHBOARD SECTION
+                ================================== -->
+
+                <section
+                    id="dashboardSection"
+                    class="section active">
+
+
+                    <!-- WELCOME -->
+
+                    <div class="welcome-card">
+
+                        <div>
+
+                            <span class="welcome-label">
+                                LIBRARY PORTAL
+                            </span>
+
+                            <h1>
+                                Welcome,
+                                <span id="welcomeName">
+                                    User
+                                </span> 👋
+                            </h1>
+
+                            <p>
+                                Manage your digital library,
+                                books and members from one place.
+                            </p>
+
+                        </div>
+
+
+                        <div class="welcome-book">
+                            📚
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATISTICS -->
+
+                    <div class="stats-grid">
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                📚
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Total Books
+                                </span>
+
+                                <strong id="totalBooks">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                📖
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Available Books
+                                </span>
+
+                                <strong id="availableBooks">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                👥
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Total Members
+                                </span>
+
+                                <strong id="totalMembers">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                📕
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Issued Books
+                                </span>
+
+                                <strong id="borrowedBooks">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RECENT BOOKS -->
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2>
+                                Recent Books
+                            </h2>
+
+                            <p>
+                                Books currently available in the library.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="outline-btn"
+                            id="viewBooksBtn">
+
+                            View All →
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="books-grid"
+                        id="dashboardBooks">
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     BOOKS SECTION
+                ================================== -->
+
+                <section
+                    id="booksSection"
+                    class="section">
+
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <span>
+                                LIBRARY
+                            </span>
+
+                            <h1>
+                                Books Management
+                            </h1>
+
+                            <p>
+                                Add, search and manage library books.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-btn"
+                            id="addBookBtn">
+
+                            + Add Book
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- BOOK SEARCH -->
+
+                    <div class="toolbar">
+
+                        <div class="search-box">
+
+                            <span>
+                                🔎
+                            </span>
+
+                            <input
+                                type="text"
+                                id="bookSearch"
+                                placeholder="Search by ID, title or author...">
+
+                        </div>
+
+
+                        <select id="categoryFilter">
+
+                            <option value="All">
+                                All Categories
+                            </option>
+
+                            <option value="Fiction">
+                                Fiction
+                            </option>
+
+                            <option value="Science">
+                                Science
+                            </option>
+
+                            <option value="Technology">
+                                Technology
+                            </option>
+
+                            <option value="History">
+                                History
+                            </option>
+
+                            <option value="Education">
+                                Education
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- BOOK GRID -->
+
+                    <div
+                        class="books-grid"
+                        id="booksGrid">
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     MEMBERS SECTION
+                ================================== -->
+
+                <section
+                    id="membersSection"
+                    class="section">
+
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <span>
+                                LIBRARY
+                            </span>
+
+                            <h1>
+                                Members Management
+                            </h1>
+
+                            <p>
+                                Manage registered library members.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-btn"
+                            id="addMemberBtn">
+
+                            + Add Member
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- MEMBER SEARCH -->
+
+                    <div class="toolbar">
+
+                        <div class="search-box">
+
+                            <span>
+                                🔎
+                            </span>
+
+                            <input
+                                type="text"
+                                id="memberSearch"
+                                placeholder="Search members...">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMBER TABLE -->
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Member
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Books
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="membersTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     ISSUED BOOKS SECTION
+                ================================== -->
+
+                <section
+                    id="issuedSection"
+                    class="section">
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <span>LIBRARY</span>
+
+                            <h1>Issued Books</h1>
+
+                            <p>See who borrowed each book and return copies when they come back.</p>
+
+                        </div>
+
+                        <button
+                            class="primary-btn"
+                            id="issueBookBtn"
+                            type="button">
+
+                            + Issue Book
+
+                        </button>
+
+                    </div>
+
+                    <div class="toolbar">
+
+                        <div class="search-box">
+
+                            <span>🔎</span>
+
+                            <input
+                                type="search"
+                                id="issuedBookSearch"
+                                placeholder="Search by book ID, book name, or member name..."
+                                aria-label="Search issued books by book ID, book name, or member name">
+
+                        </div>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Book ID</th>
+                                    <th>Book</th>
+                                    <th>Member</th>
+                                    <th>Issue Date</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="issuedBooksTable">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     REPORTS SECTION
+                ================================== -->
+
+                <section
+                    id="reportsSection"
+                    class="section">
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <span>LIBRARY</span>
+
+                            <h1>Library Reports</h1>
+
+                            <p>Current book and member activity at a glance.</p>
+
+                        </div>
+
+                        <button
+                            class="primary-btn"
+                            id="downloadReportBtn"
+                            type="button">
+
+                            ↓ Download Excel (.csv)
+
+                        </button>
+
+                    </div>
+
+                    <div class="stats-grid report-stats">
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">📚</div>
+
+                            <div>
+                                <span>Total Books</span>
+                                <strong id="reportTotalBooks">0</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">👥</div>
+
+                            <div>
+                                <span>Total Members</span>
+                                <strong id="reportTotalMembers">0</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">📕</div>
+
+                            <div>
+                                <span>Books Issued</span>
+                                <strong id="reportBooksIssued">0</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">↩️</div>
+
+                            <div>
+                                <span>Books Returned</span>
+                                <strong id="reportBooksReturned">0</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <p class="report-note">
+                        Books Issued shows current checkouts. Books Returned counts returns recorded since return tracking was added.
+                    </p>
+
+                </section>
+
+
+                <!-- =================================
+                     ABOUT SECTION
+                ================================== -->
+
+                <section
+                    id="aboutSection"
+                    class="section">
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <span>INFORMATION</span>
+
+                            <h1>About Digital Library</h1>
+
+                            <p>About our library management system.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="about-card">
+
+                        <div class="about-icon">📚</div>
+
+                        <div>
+                            <h2>Digital Library</h2>
+                            <p>A simple system to manage books, members, and book issues and returns.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         ADD BOOK MODAL
+    ================================== -->
+
+    <div
+        class="modal"
+        id="bookModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <h2 id="bookModalTitle">
+                    Add New Book
+                </h2>
+
+                <button
+                    class="close-btn"
+                    id="closeBookModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <form id="bookForm">
+
+                <label for="bookId">
+                    Book ID
+                </label>
+
+                <input
+                    type="text"
+                    id="bookId"
+                    readonly>
+
+
+                <label for="bookTitle">
+                    Book Title
+                </label>
+
+                <input
+                    type="text"
+                    id="bookTitle"
+                    placeholder="Enter book title"
+                    required>
+
+
+                <label for="bookAuthor">
+                    Author
+                </label>
+
+                <input
+                    type="text"
+                    id="bookAuthor"
+                    placeholder="Enter author name"
+                    required>
+
+
+                <label for="bookCategory">
+                    Category
+                </label>
+
+                <select
+                    id="bookCategory"
+                    required>
+
+                    <option value="">
+                        Select category
+                    </option>
+
+                    <option value="Fiction">
+                        Fiction
+                    </option>
+
+                    <option value="Science">
+                        Science
+                    </option>
+
+                    <option value="Technology">
+                        Technology
+                    </option>
+
+                    <option value="History">
+                        History
+                    </option>
+
+                    <option value="Education">
+                        Education
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="bookQuantity"
+                    min="1"
+                    step="1"
+                    value="1"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn modal-submit">
+
+                    <span id="bookSubmitText">Add Book</span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         ADD MEMBER MODAL
+    ================================== -->
+
+    <div
+        class="modal"
+        id="memberModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <h2 id="memberModalTitle">
+                    Add New Member
+                </h2>
+
+                <button
+                    class="close-btn"
+                    id="closeMemberModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <form id="memberForm">
+
+                <label>
+                    Member Name
+                </label>
+
+                <input
+                    type="text"
+                    id="memberName"
+                    placeholder="Enter member name"
+                    required>
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="memberEmail"
+                    placeholder="Enter email"
+                    required>
+
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    type="tel"
+                    id="memberPhone"
+                    placeholder="Enter phone number"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn modal-submit">
+
+                    <span id="memberSubmitText">Add Member</span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         ISSUE BOOK MODAL
+    ================================== -->
+
+    <div
+        class="modal"
+        id="issueModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <h2>
+                    Issue Book
+                </h2>
+
+                <button
+                    class="close-btn"
+                    id="closeIssueModal"
+                    type="button">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <form id="issueForm">
+
+                <p id="issueBookTitle" class="issue-book-title"></p>
+
+                <label for="issueBookSelect">
+                    Select Book
+                </label>
+
+                <select id="issueBookSelect" required>
+                </select>
+
+                <label for="issueMember">
+                    Select Member
+                </label>
+
+                <select id="issueMember" required>
+                </select>
+
+                <button
+                    type="submit"
+                    class="primary-btn modal-submit">
+
+                    Issue Book
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="./dashboard.js"></script>
+
+</body>
+
+</html>
